@@ -54,6 +54,7 @@ pip install pyarrow
 python data-platform/generate_dummy_data.py
 ```
 2. Start the Scheduler
+
 The scheduler runs as a continuous daemon. It will automatically trigger jobs based on the schedule.
 
 Mac/Linux:
@@ -84,3 +85,4 @@ Run the integration test suite to verify the ingestion and configuration logic.
 ```Bash
 python -m pytest data-platform/tests
 ```
+
