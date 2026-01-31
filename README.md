@@ -2,7 +2,7 @@
 
 A production-grade, small-scale data platform built in Python. This system incorporates core data engineering principles: priority scheduling, SLA enforcement, DAG dependencies, and observability.
 
-## 🏗 System Architecture
+## System Architecture
 
 The system follows a **Control Plane / Data Plane** separation:
 
@@ -36,3 +36,4 @@ pip install pyarrow
 # Generate Dummy Input Data
 
 python data-platform/generate_dummy_data.py
+
