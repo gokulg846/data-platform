@@ -1,4 +1,4 @@
-#Data Pipeline & Job Scheduler
+Data Pipeline & Job Scheduler
 
 A production-grade, small-scale data platform built in Python. This system incorporates core data engineering principles: priority scheduling, SLA enforcement, DAG dependencies, and observability.
 
@@ -55,6 +55,7 @@ pip install pyarrow
 
 python data-platform/generate_dummy_data.py
 '''
+
 
 
 
