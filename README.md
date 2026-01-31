@@ -39,23 +39,48 @@ data-platform/
 ├── utils/                  # Shared IO and helper functions
 ├── tests/                  # Pytest integration suite
 └── main.py                 # Entry point
+```
+🚀 How to Run
+Prerequisites
+Python 3.8+
 
-
-## 🚀 How to Run
-
-### 1. Setup
+1. Installation
 ```bash
-# Clone and Install
-git clone <your-repo-url>
-cd data-platform
+# Install dependencies
 pip install -r requirements.txt
 pip install pyarrow
 
-# Generate Dummy Input Data
-
+# Generate required dummy data for the CSV ingestion job
 python data-platform/generate_dummy_data.py
-'''
+```
+2. Start the Scheduler
+The scheduler runs as a continuous daemon. It will automatically trigger jobs based on the schedule.
 
+Mac/Linux:
+```bash
+PYTHONPATH=data-platform python data-platform/main.py --mode scheduler
+```
 
+Windows:
+```
+$env:PYTHONPATH="data-platform"; python data-platform/main.py --mode scheduler
+```
+3. Launch the Dashboard
 
+Open a new terminal to monitor the system in real-time.
 
+```
+streamlit run data-platform/dashboard/app.py
+```
+
+Configuration Guide
+
+Modify data-platform/config/jobs.yaml to tweak the system behavior.
+
+Testing
+
+Run the integration test suite to verify the ingestion and configuration logic.
+
+```Bash
+python -m pytest data-platform/tests
+```
