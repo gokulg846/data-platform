@@ -41,8 +41,6 @@ data-platform/
 └── main.py                 # Entry point
 ```
 🚀 How to Run
-Prerequisites
-Python 3.8+
 
 1. Installation
 ```bash
@@ -85,4 +83,5 @@ Run the integration test suite to verify the ingestion and configuration logic.
 ```Bash
 python -m pytest data-platform/tests
 ```
+
 
