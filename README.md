@@ -23,6 +23,24 @@ The system follows a **Control Plane / Data Plane** separation:
     * **Metadata Store:** SQLite database tracking every run status and timestamp.
     * **Dashboard:** Streamlit app for real-time monitoring of job history and alerts.
 
+Repository Structure
+
+```text
+data-platform/
+├── config/
+│   ├── jobs.yaml           # Central definition of DAG, SLAs, and Priorities
+│   └── loader.py           # Configuration parsing logic
+├── ingestion/              # Logic for fetching APIs and parsing CSVs
+├── transformations/        # Pandas logic for business rules
+├── scheduler/
+│   └── core.py             # The "Brain": Priority Queues, DAGs, SLA logic
+├── metadata/               # SQLite interface
+├── dashboard/              # Streamlit observability app
+├── utils/                  # Shared IO and helper functions
+├── tests/                  # Pytest integration suite
+└── main.py                 # Entry point
+
+
 ## 🚀 How to Run
 
 ### 1. Setup
@@ -36,4 +54,7 @@ pip install pyarrow
 # Generate Dummy Input Data
 
 python data-platform/generate_dummy_data.py
+'''
+
+
 
