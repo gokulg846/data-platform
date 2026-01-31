@@ -1,0 +1,26 @@
+defaults:
+  sla_targets:
+    gold: 0.99
+    silver: 0.95
+    bronze: 0.90
+
+jobs:
+  - id: "ingest_users_api"
+    type: "ingest"
+    priority: "gold"
+    source: "https://jsonplaceholder.typicode.com/users"
+    sla_duration_seconds: 5
+    schedule_interval: 60
+
+  - id: "ingest_transactions_csv"
+    type: "ingest"
+    priority: "silver"
+    source: "./data/input/transactions.csv"
+    sla_duration_seconds: 10
+    schedule_interval: 120
+
+  - id: "transform_user_ltv"
+    type: "transform"
+    priority: "gold"
+    dependencies: ["ingest_users_api", "ingest_transactions_csv"]
+    sla_duration_seconds: 15
